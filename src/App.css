@@ -15,19 +15,23 @@ button{
 .show {
   display: flex;
   justify-content: space-evenly; 
-  flex-wrap: wrap; 
+  /* flex-wrap: wrap;  */
   gap:1.2rem;
   margin-top: 4rem; 
   padding: 0 1rem;
+  overflow-y: hidden;
+  overflow-x: visible;
+/* width: 90%; */
 }
 
 .show .imges {
   flex: 1 1 calc(25% - 1rem);
-  width: 10rem; 
+  width: 25%; 
   height: 25rem; 
 }
 
 .imges img{
   height:20rem;
-  width: 100%;
+  /* width: 100%;  */
+  object-fit: cover;
 }
