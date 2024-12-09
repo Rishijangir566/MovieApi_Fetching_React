@@ -1,0 +1,6 @@
+tranding movie day = 'https://api.themoviedb.org/3/trending/movie/day'
+tranding movie week = 'https://api.themoviedb.org/3/trending/movie/week'
+popular movie = 'https://api.themoviedb.org/3/movie/popular'
+popullar tv show ='https://api.themoviedb.org/3/tvshow/popular'
+top rated movie = 'https://api.themoviedb.org/3/movie/top_rated'
+top rated tv show ='https://api.themoviedb.org/3/tvshow/top_rated'
