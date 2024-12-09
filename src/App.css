@@ -23,6 +23,9 @@ button{
   overflow-x: visible;
 /* width: 90%; */
 }
+.show::-webkit-scrollbar{
+  display: none;
+}
 
 .show .imges {
   flex: 1 1 calc(25% - 1rem);
