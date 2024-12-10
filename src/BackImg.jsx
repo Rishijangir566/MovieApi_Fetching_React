@@ -14,6 +14,10 @@ async function back(){
     console.log(response.data.results);
 }
 
+ function getrandom (){
+  return Math.floor(Math.random()*showdata.length)
+ }
+
 useEffect(()=>{
     back()
   },[])
@@ -22,17 +26,15 @@ useEffect(()=>{
   return (
     <div>
         
-          {
-            showdata.length>0 &&
-              showdata.map((item)=>{
-                return(
-                <div className="back" key={item.id}>
-                  <img src={img_base_path+item.backdrop_path} alt="" />
-                  
-                 </div> )
+          
+         
+                <div className="back" key={showdata.id}>
+                  <img src={img_base_path+showdata[getrandom].backdrop_path} alt="" />
+                     
+                 </div> 
 
-              })
-          }
+             
+          
      
      
     </div>
