@@ -27,13 +27,13 @@ button{
   display: none;
 }
 
-.show .imges {
+.show .images {
   flex: 1 1 calc(25% - 1rem);
   width: 25%; 
   height: 25rem; 
 }
 
-.imges img{
+.images img{
   height:20rem;
   /* width: 100%;  */
   object-fit: cover;
