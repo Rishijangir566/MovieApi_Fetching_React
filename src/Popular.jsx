@@ -11,12 +11,12 @@ function Popular() {
 async function togglemovie(){
     const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?language=en-US&api_key=${API_KEY}`)
     setShowData(response.data.results)
-    console.log(response.data.results);
+    // console.log(response.data.results);
 }
 async function toggletvshow(){
   const response = await axios.get(`https://api.themoviedb.org/3/tv/popular?language=en-US&api_key=${API_KEY}`)
   setShowData(response.data.results)
-  console.log(response.data.results);
+  // console.log(response.data.results);
 }
          
 useEffect(()=>{
@@ -35,8 +35,10 @@ useEffect(()=>{
             return(
                <div className="imges" key={item.id}>
                 <img src={img_base_path+item.poster_path} alt="" />
+
                 <h3>{item.title || item.name ||item.original_title}</h3>
                 <h5>{item.release_date?new Date(item.release_date).toDateString() :new Date(item.first_air_date).toDateString()}</h5>
+
                </div>
             )
           })
