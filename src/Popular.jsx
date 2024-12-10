@@ -36,6 +36,7 @@ useEffect(()=>{
                <div className="imges" key={item.id}>
                 <img src={img_base_path+item.poster_path} alt="" />
                 <h3>{item.title}</h3>
+                <h5>{new Date(item.release_date).toDateString() || new Date(item.first_air_date).toDateString()}</h5>
                </div>
             )
           })
