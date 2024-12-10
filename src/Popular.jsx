@@ -18,7 +18,7 @@ async function toggletvshow(){
   setShowData(response.data.results)
   // console.log(response.data.results);
 }
-
+         
 useEffect(()=>{
     togglemovie()
   },[])
@@ -35,8 +35,10 @@ useEffect(()=>{
             return(
                <div className="imges" key={item.id}>
                 <img src={img_base_path+item.poster_path} alt="" />
-                <h3>{item.title}</h3>
-                <h5>{item.release_date ? new Date(item.release_date).toDateString() : new Date(item.first_air_date).toDateString()} </h5>
+
+                <h3>{item.title || item.name ||item.original_title}</h3>
+                <h5>{item.release_date?new Date(item.release_date).toDateString() :new Date(item.first_air_date).toDateString()}</h5>
+
                </div>
             )
           })

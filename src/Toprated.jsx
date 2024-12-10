@@ -28,7 +28,7 @@ useEffect(()=>{
   return (
     <div>
       <button onClick={topratedmovie}>Top Rated Movies </button>
-      <button onClick={topratedtvshow}>Popular Tv Show  </button>
+      <button onClick={topratedtvshow}>Top Rated Tv Show  </button>
       <div className="show">
           
           {showdata.length > 0 &&
@@ -36,9 +36,12 @@ useEffect(()=>{
             return(
                <div className="imges" key={item.id}>
                 <img src={img_base_path+item.poster_path} alt="" />
-                <h3>{item.title}</h3>
-                <h5>{item.release_date ? new Date(item.release_date).toDateString() : new Date(item.first_air_date).toDateString()} </h5>
-                                </div>
+
+
+                <h3>{item.title || item.name ||item.original_title}</h3>
+                <h5>{item.release_date?new Date(item.release_date).toDateString() :new Date(item.first_air_date).toDateString()}</h5>
+               </div>
+
             )
           })
 
