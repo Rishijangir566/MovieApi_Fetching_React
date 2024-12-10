@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+
 import { useState ,useEffect} from "react"
 import axios from "axios"
 function BackImg() {
@@ -18,6 +18,7 @@ async function back(){
   return Math.floor(Math.random()*showdata.length)
  }
 
+
 useEffect(()=>{
     back()
   },[])
@@ -25,8 +26,6 @@ useEffect(()=>{
 
   return (
     <div>
-        
-          
          
                 <div className="back" key={showdata.id}>
                   <img src={img_base_path+showdata[getrandom].backdrop_path} alt="" />
