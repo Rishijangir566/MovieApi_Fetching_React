@@ -12,10 +12,12 @@ function Toprated() {
 async function topratedmovie(){
     const response = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&api_key=${API_KEY}`)
     setShowData(response.data.results)
+
 }
 async function topratedtvshow(){
   const response = await axios.get(`https://api.themoviedb.org/3/tv/top_rated?language=en-US&api_key=${API_KEY}`)
   setShowData(response.data.results)
+
 }
 
 
@@ -35,6 +37,7 @@ function getGenre(genreArr){
   }
 
 
+
 useEffect(()=>{
     topratedmovie()
     Genre()
@@ -52,10 +55,14 @@ useEffect(()=>{
             return(
                <div className="images" key={item.id}>
                 <img src={img_base_path+item.poster_path} alt="" />
-                <h3>{item.title || item.name || item.original_title}</h3>
-                <h5>{item.release_date ? new Date(item.release_date).toDateString() : new Date(item.first_air_date).toDateString()}</h5>
-                <p>{getGenre(item.genre_ids)}</p>
+
+
+
+                <h3>{item.title || item.name ||item.original_title}</h3>
+                <h5>{item.release_date?new Date(item.release_date).toDateString() :new Date(item.first_air_date).toDateString()}</h5>
+
                </div>
+
             )
           })
 

@@ -4,7 +4,9 @@ import { useState ,useEffect} from "react"
 import axios from "axios"
 function DayWeek() {
     const [showdata , setShowData] = useState([])
-    const [genre,setGenre] = useState([])
+
+    const [genre,setgenre] = useState([])
+ 
 
   const API_KEY = import.meta.env.VITE_API_KEY
    const img_base_path="https://image.tmdb.org/t/p/original"
@@ -21,6 +23,7 @@ async function toggleweek(){
 
 async function Genre() {
   const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=${API_KEY}`)
+
   setGenre(response.data.genres)
   console.log(response.data.genres);
 }
@@ -42,13 +45,16 @@ return genreObj ? genreObj.name : null;
 
 
 
+
+
 useEffect(()=>{
     toggleday()
     Genre()
   },[])
   
   return (
-    <div>                                                         
+    <div>   
+                                                           
       <button onClick={toggleday}>day </button>
       <button onClick={toggleweek}>week  </button>
       <div className="show">
@@ -56,12 +62,16 @@ useEffect(()=>{
           {showdata.length > 0 &&
             showdata.map((item)=>{
               return(
+
                 <div className="images" key={item.id}>
                 <img src={img_base_path+item.poster_path} alt="" />
                 <h3>{item.title || item.name || item.original_title}</h3>
                 <h5>{item.release_date ? new Date(item.release_date).toDateString() : new Date(item.first_air_date).toDateString()}</h5>
                 <p>{getGenre(item.genre_ids)}</p>
+
                </div>
+              
+                
             )
           })
            }
