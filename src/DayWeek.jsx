@@ -5,7 +5,7 @@ import axios from "axios"
 function DayWeek() {
     const [showdata , setShowData] = useState([])
 
-    const [genre,setgenre] = useState([])
+    const [genre,setGenre] = useState([])
  
 
   const API_KEY = import.meta.env.VITE_API_KEY
