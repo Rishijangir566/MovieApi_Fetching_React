@@ -59,7 +59,7 @@ useEffect(()=>{
 
                 <h3>{item.title || item.name ||item.original_title}</h3>
                 <h5>{item.release_date?new Date(item.release_date).toDateString() :new Date(item.first_air_date).toDateString()}</h5>
-
+                <p>{getGenre(item.genre_ids)}</p>
 
                </div>
             )
