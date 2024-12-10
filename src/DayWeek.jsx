@@ -5,9 +5,7 @@ import axios from "axios"
 function DayWeek() {
     const [showdata , setShowData] = useState([])
     const [genre,setgenre] = useState([])
-  const [ids,setids]=useState([])
-    const [matchGenre,setmatchgere]= ("")
-
+ 
   const API_KEY = import.meta.env.VITE_API_KEY
    const img_base_path="https://image.tmdb.org/t/p/original"
 
@@ -31,12 +29,6 @@ async function Genre() {
 
 
 
-function showingGenre(id){
-console.log("not done");
-}
-}
-
-
 
 
 useEffect(()=>{
@@ -55,9 +47,8 @@ useEffect(()=>{
               return(
                 <div className="imges" key={item.id}>
                 <img src={img_base_path+item.poster_path} alt="" />
-                <h3>{item.title}</h3>
-                <h5>{new Date(item.release_date).toDateString()}</h5>
-                <p key={showingGenre(item.genre_ids)}>{}</p>
+                <h3>{item.title || item.name ||item.original_title}</h3>
+                <h5>{item.release_date?new Date(item.release_date).toDateString() :new Date(item.first_air_date).toDateString()}</h5>
                </div>
             )
           })
